@@ -3,18 +3,24 @@
     --bkg-color: white;
     --color: black;
     --hover-color: rgb(185, 185, 185);
+    --border-bottom: #ddd;
+    --table-shading: #f2f2f2;
 }
 
 :root.dark {
     --bkg-color: rgb(14, 14, 14);
     --color: white;
     --hover-color: rgb(94, 94, 94);
+    --border-bottom: rgb(107, 107, 107);
+    --table-shading: rgb(75, 74, 74);
 }
 
 :root.light {
     --bkg-color: white;
     --color: black;
     --hover-color: rgb(185, 185, 185);
+    --border-bottom: #ddd;
+    --table-shading: #f2f2f2;
 }
 
 body, html {
@@ -109,6 +115,31 @@ nav>div {
     display: flex;
     flex-direction: column;
     gap: 8%;
+}
+
+#create-To-Do .form-fields {
+    display: flex;
+    justify-content: left;
+    gap: 5%;
+}
+
+.form-side {
+    display: flex;
+    flex-direction: column;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-bottom);
+}
+
+td {
+    font-weight: normal;
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-shading);
 }
 
 #content-title {

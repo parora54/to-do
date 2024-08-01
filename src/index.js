@@ -1,6 +1,7 @@
 import { loadAllTasks } from './allTasks';
 import * as css from './style.css'
 import { loadToDoForm, toggleTheme } from './themeToggle';
+import { createToDo } from './createToDo';
 
 //dummyData
 const dummyData = `[
@@ -93,22 +94,29 @@ const dummyData = `[
         "project": "HR"
     }
 ]`
+
 let data = JSON.parse(dummyData)
 
 // selectors
 const body = document.querySelector('#container')
-
+const createToDoButton = document.querySelector("#content-title button.invertible-button")
+const toDoTable = document.querySelector('#todo-list')
 const themeButton = document.querySelector('#theme-toggle>button')
 const homeButton = document.querySelector('#home>button')
 const allTasksButton = document.querySelector('.option#all-tasks')
+
+// inital load
+body.innerHTML = ""
+body.appendChild(loadAllTasks(data))
 
 // DOM events
 themeButton.addEventListener('click', toggleTheme)
 
 homeButton.addEventListener('click', () => {
     body.innerHTML = ""
-    body.appendChild(loadAllTasks())
+    body.appendChild(loadAllTasks(data))
 })
+
 allTasksButton.addEventListener('click', () => {
     body.innerHTML = ""
     body.appendChild(loadAllTasks(data))

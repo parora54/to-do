@@ -1,3 +1,7 @@
+import { createToDo } from "./createToDo"
+import ToDo from "./toDo"
+import data from "./index"
+
 export function loadAllTasks(allTodos) {
     const container = document.createElement('div')
     container.id = "inner-container"
@@ -7,9 +11,11 @@ export function loadAllTasks(allTodos) {
     titleElem.id = 'content-title'
     titleElem.textContent = "All Tasks"
 
+    // make create TO Do button
     const createButton = document.createElement('button')
     createButton.classList.add('invertible-button')
     createButton.textContent = "Create To Do"
+
     titleElem.appendChild(createButton)
 
     container.appendChild(titleElem)
@@ -57,14 +63,12 @@ export function loadAllTasks(allTodos) {
         console.log(toDo.title)
     }
 
+    createButton.addEventListener('click', () => {
+        container.insertBefore(createToDo(), todoList)
+    })
+
     container.appendChild(todoList)
 
     // return overarching div container after appending all children elements
-    return container
-}
-
-export function loadToDoForm(toDo) {
-    const container = document.createElement('div')
-
     return container
 }

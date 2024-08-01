@@ -71,6 +71,49 @@
                 All Tasks
                 <button class="invertible-button">Create To Do</button>
             </div>
+            <form id="create-To-Do">
+                <fieldset>
+                    <legend>New ToDo</legend>
+                    <div class="form-fields">
+                        <div class="form-side">
+                            <label for="title">
+                                TITLE:
+                            </label>
+                            <input type="text" id="title" name="title" minlength="2" maxlength="50">
+                            <label for="desc">
+                                DESCRIPTION:
+                            </label>
+                            <input type="text" id="desc" name="desc">
+                            <label for="due">
+                                DUE DATE:
+                            </label>
+                            <input type="date" id="due" name="due"></div>
+                        <div class="form-side">
+                            <div class="radio">
+                                <input type="radio" id="low" name="priority" value="low">
+                                <label for="low">
+                                    LOW PRIORITY
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="medium" name="priority" value="medium">
+                                <label for="medium">
+                                    MEDIUM PRIORITY
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="high" name="priority" value="high">
+                                <label for="high">
+                                    HIGH PRIORITY
+                                </label>
+                            </div>
+                            <button form="create-To-Do" id="action-button">
+                                Create To Do
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
             <table id="todo-list">
                 <tr>
                     <th></th>

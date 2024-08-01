@@ -1,7 +1,8 @@
 import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 
 export default class ToDo {
-    constructor(title, desc, dueDate, priority, notes, project) {
+    constructor(id, title, desc, dueDate, priority, notes, project) {
+        this._id = id
         this._title = title;
         this._desc = desc;
         this._dueDate = dueDate;
@@ -9,6 +10,11 @@ export default class ToDo {
         this._notes = notes;
         this._finished = false;
         this._project = project;
+    }
+
+    // Getter and Setter for title
+    get id() {
+        return this._id;
     }
 
     // Getter and Setter for title
